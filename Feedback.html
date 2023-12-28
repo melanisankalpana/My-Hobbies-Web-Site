@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Feedback.css">
+    <script src="https://unpkg.com/vue@2.6.11"></script>
+    <title>Feedback</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="Feedback.html">Feedback</a>
+        <a href="booksreading.html">Books Reading</a>
+        <a href="badminton.html">Badminton</a>
+        <a href="Stamp_Collecting.html">Stamps Collecting</a>
+        <a href="Home.html">Home</a>
+        </a>
+    </div>
+
+    <h2>Feel free to send us a message</h2>
+<p>We value your opinions and want to hear from you! Please do not be hesitant to write us a message if you have any suggestions, compliments, or worries. As we work to satisfy your requirements and enhance our services, your input is very helpful to us. Thus, thanks for taking a moment to contact us with your ideas. We'll do our best to respond to you as soon as we can. We appreciate your ongoing help!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="message">Message</label>
+      </div>
+      <div class="col-75">
+        <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+<!---------------collapse-->
+
+
+<h2>Recently Asked Questions</h2>
+
+<p>What you want to know...</p>
+<button class="collapsible">What are some popular hobbies among people of all ages?</button>
+<div class="content">
+  <p>Some popular hobbies among people of all ages include reading, cooking, gardening, painting, photography, playing musical instruments, and practicing sports.</p>
+</div>
+<button class="collapsible">How can someone get started with a new hobby?</button>
+<div class="content">
+  <p>To get started with a new hobby, it's important to choose something that you enjoy and feel passionate about. Do some research to find out what you need to get started, such as equipment, materials, or resources. You can also consider taking a class, joining a club or group, or finding a mentor who can help you learn and improve your skills.</p>
+</div>
+<button class="collapsible">Can participating in a hobby have mental and emotional benefits?</button>
+<div class="content">
+  <p>Yes, participating in a hobby can have many mental and emotional benefits. Hobbies can help to reduce stress, improve mood, increase creativity, and provide a sense of accomplishment and fulfillment. They can also help to build self-esteem, develop new skills, and provide a sense of purpose and meaning in life.</p>
+</div>
+
+
+
+
+<!--------------For the comment section-->
+<div class="box">
+  <div id="app">
+    <div class="comment-section-wrapper">
+      <comment-section :comments="comments"></comment-section>
+    </div>
+  </div>
+</div>
+    <script src="comment.js"></script>
+
+<!-------collapse js-->
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
+</body>
+<footer>
+  <p>Send your mails to :<br>
+  <a href="uamsankalpana@gmail.com">uamsankalpana@gmail.com</a></p>
+</footer>
+
+</html>
